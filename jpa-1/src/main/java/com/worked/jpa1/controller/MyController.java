@@ -20,24 +20,20 @@ import com.worked.jpa1.model.Student;
 
 @RestController
 public class MyController {
-	
+
 	@Autowired
 	StudDAO dao;
-     
-	@RequestMapping("/")
-	public String home() {
-		return "Home.jsp";
-	}
+
 	@RequestMapping(value="/students",method = RequestMethod.POST)
 	@ResponseBody
-	public Student addstudent(Student stud) {
+	public Student addStudent(Student stud) {
 		dao.save(stud);
 		return stud;
 	}
 	@RequestMapping("/student")
 	@ResponseBody
 	public  List<Student> addStudent() {
-		
+
 		return  (List<Student>) dao.findAll();
 	}
 	@RequestMapping("/students/{aid}")

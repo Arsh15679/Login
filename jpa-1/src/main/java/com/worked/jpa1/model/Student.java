@@ -5,10 +5,16 @@ import javax.persistence.Id;
 
 @Entity
 public class Student {
+	
      @Id
 	private int aid;
 	private String aname;
 	private String acourse;
+	
+	public Student() {
+		// TODO Auto-generated constructor stub
+	}
+	
 	public int getAid() {
 		return aid;
 	}
