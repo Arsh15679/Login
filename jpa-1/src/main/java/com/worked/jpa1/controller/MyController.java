@@ -9,6 +9,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
@@ -27,7 +28,7 @@ public class MyController {
 	public String home() {
 		return "Home.jsp";
 	}
-	@PostMapping("/students")
+	@RequestMapping(value="/students",method = RequestMethod.POST)
 	@ResponseBody
 	public Student addstudent(Student stud) {
 		dao.save(stud);
